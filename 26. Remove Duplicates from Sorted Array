@@ -1,0 +1,25 @@
+//https://www.youtube.com/watch?v=DEJAZBq0FDA
+//using two pointers approach
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums.length==0 ){
+            return 0;
+        }
+        int l=1;
+        int r=1;
+        for(int i=1;i<nums.length;i++){
+            if(nums[r]==nums[r-1]){
+                
+                r++;
+            }
+            else{
+                nums[l]=nums[r];
+                l++;
+                r++;
+            }
+        }
+        return l;
+        
+    }
+}
